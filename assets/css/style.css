@@ -1,0 +1,45 @@
+/* ===========================
+   DESIGN SYSTEM
+=========================== */
+
+:root {
+
+    /* Colors */
+    --primary: #2563EB;
+    --primary-hover: #1D4ED8;
+
+    --background: #F4F8FC;
+
+    --white: #FFFFFF;
+
+    --text: #1F2937;
+
+    --gray: #6B7280;
+
+    --border: #D1D5DB;
+
+    --success: #10B981;
+
+    --warning: #F59E0B;
+
+    --danger: #EF4444;
+
+    /* Shadow */
+    --shadow: 0 10px 25px rgba(0,0,0,.10);
+
+    /* Radius */
+    --radius: 15px;
+}
+
+/* إزالة الهوامش الافتراضية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* تنسيق عام */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+}

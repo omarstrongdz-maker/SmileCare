@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Appointments</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/patients.css">
+</head>
+
+<body>
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🦷 <span>SmileCare</span>
+        </div>
+
+        <nav class="menu">
+
+            <a href="../dashboard.html">Dashboard</a>
+<a href="patients.html" class="active">Patients</a>
+<a href="doctors.html">Doctors</a>
+<a href="appointments.html">Appointments</a>
+<a href="dental-chart.html">Dental Chart</a>
+<a href="medical-records.html">Medical Records</a>
+<a href="payments.html">Payments</a>
+<a href="reports.html">Reports</a>
+<a href="settings.html">Settings</a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <header class="topbar">
+
+<h1>Appointments</h1>
+
+
+            <div class="user">
+                Omar
+            </div>
+
+        </header>
+        <div class="toolbar">
+
+    <button class="add-btn">
+        + New Appointment
+    </button>
+
+    <input
+        type="text"
+         id="searchAppointment"
+        class="search-box"
+        placeholder="Search appointment..."
+    >
+
+</div>
+<div class="appointments-table">
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+    <th>ID</th>
+    <th>Patient</th>
+    <th>Doctor</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Status</th>
+    <th>Actions</th>
+
+</tr>
+
+        </thead>
+
+       <tbody id="appointmentsTable">
+
+</tbody>
+
+    </table>
+
+</div>
+
+
+
+<!-- Add Appointment Modal -->
+
+<div class="modal" id="appointmentModal">
+
+    <div class="modal-content">
+
+        <h2 id="modalTitle">
+            Add New Appointment
+        </h2>
+
+        <label>Patient</label>
+
+        <select id="appointmentPatient">
+
+        </select>
+
+        <label>Doctor</label>
+
+        <select id="appointmentDoctor">
+
+            
+
+        </select>
+
+        <label>Date</label>
+
+        <input
+            type="date"
+            id="appointmentDate"
+        >
+
+        <label>Time</label>
+
+        <input
+            type="time"
+            id="appointmentTime"
+        >
+
+        <div class="modal-buttons">
+
+            <button
+                id="saveAppointment"
+                class="save-btn">
+
+                Save
+
+            </button>
+
+            <button
+                class="cancel-btn">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- Delete Appointment  Modal -->
+
+<div class="modal" id="deleteModal">
+
+    <div class="modal-content delete-modal">
+
+        <h2>Delete Appointment</h2>
+
+        <p>
+            Are you sure you want to delete this appointment?
+        </p>
+
+        <div class="modal-buttons">
+
+            <button class="delete-confirm-btn">
+                Delete
+            </button>
+
+            <button class="delete-cancel-btn">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+    </main>
+
+</div>
+<!-- View Appointment Modal -->
+
+<div class="modal" id="viewModal">
+
+    <div class="modal-content">
+
+        <h2>Appointment Details</h2>
+
+        <div class="patient-info">
+
+            <p><strong>ID:</strong> <span id="viewID"></span></p>
+
+            <p><strong>Patient:</strong> <span id="viewPatient"></span></p>
+
+            <p><strong>Doctor:</strong> <span id="viewDoctor"></span></p>
+
+            <p><strong>Date:</strong> <span id="viewDate"></span></p>
+
+            <p><strong>Time:</strong> <span id="viewTime"></span></p>
+
+            <p><strong>Status:</strong> <span id="viewStatus"></span></p>
+
+        </div>
+
+        <div class="modal-buttons">
+
+            <button class="cancel-btn" id="closeView">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="../assets/js/storage.js"></script>
+<script src="../assets/js/appointments.js"></script>
+</body>
+
+</html>
+
+

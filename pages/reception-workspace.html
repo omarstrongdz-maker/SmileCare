@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmileCare - الاستقبال</title>
+
+    <link rel="stylesheet" href="../assets/css/reception-workspace.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="top-header">
+
+        <div class="brand">
+            <div class="brand-icon">🦷</div>
+
+            <div>
+                <h1>SmileCare</h1>
+                <span>نظام إدارة عيادة الأسنان</span>
+            </div>
+        </div>
+
+        <div class="employee-info">
+
+            <div class="date-box">
+                <span>📅</span>
+                <div>
+                    <small>التاريخ</small>
+                    <strong id="todayDate">--/--/----</strong>
+                </div>
+            </div>
+
+            <div class="employee-box">
+                <div class="employee-avatar">👤</div>
+
+                <div>
+                    <small>موظف الاستقبال</small>
+                    <strong id="employeeName">--</strong>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="main-container">
+
+        <!-- PAGE TITLE -->
+        <section class="page-heading">
+
+            <div>
+                <h2>الاستقبال</h2>
+                <p>إدارة المرضى والمواعيد وقائمة الانتظار</p>
+            </div>
+
+            <div class="work-status">
+
+                <span class="status-dot" id="statusDot"></span>
+
+                <div>
+                    <small>حالة الدوام</small>
+                    <strong id="workStatus">لم يبدأ الدوام</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WORK DAY ================= -->
+        <section class="work-day-card">
+
+            <div class="work-day-content">
+
+                <div class="work-day-icon">
+                    🕐
+                </div>
+
+                <div>
+                    <h3 id="workDayTitle">ابدأ يوم العمل</h3>
+
+                    <p id="workDayMessage">
+                        اضغط على زر بدء العمل لتسجيل وقت حضورك.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="work-day-actions">
+
+                <span id="startTimeText">
+                    وقت البدء: --
+                </span>
+
+                <button
+                    id="startWorkBtn"
+                    class="primary-button"
+                    type="button"
+                >
+                    <span>▶</span>
+                    بدء العمل
+                </button>
+
+                <button
+                    id="endWorkBtn"
+                    class="danger-button"
+                    type="button"
+                    style="display:none;"
+                >
+                    <span>■</span>
+                    إنهاء الدوام
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STATISTICS ================= -->
+        <section class="statistics-grid">
+
+            <div class="stat-card patients">
+
+                <div class="stat-icon">👥</div>
+
+                <div>
+                    <span>مرضى اليوم</span>
+                    <strong id="totalPatients">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card waiting">
+
+                <div class="stat-icon">🟡</div>
+
+                <div>
+                    <span>المنتظرون</span>
+                    <strong id="waitingPatients">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card doctors">
+
+                <div class="stat-icon">👨‍⚕️</div>
+
+                <div>
+                    <span>الأطباء الموجودون</span>
+                    <strong id="availableDoctors">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card room">
+
+                <div class="stat-icon">🪑</div>
+
+                <div>
+                    <span>غرفة الانتظار</span>
+                    <strong id="waitingRoomStatus">جاهزة</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUICK ACTIONS ================= -->
+        <section class="quick-actions-section">
+
+            <div class="section-title">
+
+                <div>
+                    <h2>الوظائف الرئيسية</h2>
+                    <p>كل ما يحتاجه موظف الاستقبال في مكان واحد</p>
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions-grid">
+
+                <!-- NEXT PATIENT -->
+                <button
+                    class="action-card next-patient"
+                    id="nextPatientBtn"
+                    type="button"
+                >
+
+                    <div class="action-icon">
+                        🔵
+                    </div>
+
+                    <div class="action-text">
+                        <h3>المريض التالي</h3>
+                        <p>عرض المرضى الموجودين والمنتظرين</p>
+                    </div>
+
+                    <span class="action-arrow">←</span>
+
+                </button>
+
+
+<!-- 🚨 Emergency -->
+<button
+    class="action-card emergency-action"
+    id="emergencyBtn"
+    type="button"
+>
+    <div class="action-icon">🚨</div>
+
+    <div class="action-text">
+        <h3>حالة طارئة</h3>
+        <p>إدخال حالة طارئة وإعطاؤها أولوية للطبيب</p>
+    </div>
+
+    <span class="action-arrow">←</span>
+</button>
+
+
+                <!-- NEW PATIENT -->
+                <button
+                    class="action-card new-patient"
+                    id="newPatientBtn"
+                    type="button"
+                >
+
+                    <div class="action-icon">
+                        🟢
+                    </div>
+
+                    <div class="action-text">
+                        <h3>تسجيل مريض</h3>
+                        <p>تسجيل مريض حضر بدون حجز</p>
+                    </div>
+
+                    <span class="action-arrow">←</span>
+
+                </button>
+
+
+                <!-- APPOINTMENTS -->
+                <button
+                    class="action-card appointments"
+                    id="appointmentsBtn"
+                    type="button"
+                >
+
+                    <div class="action-icon">
+                        📅
+                    </div>
+
+                    <div class="action-text">
+                        <h3>المواعيد</h3>
+                        <p>إدارة مواعيد اليوم والحجوزات</p>
+                    </div>
+
+                    <span class="action-arrow">←</span>
+
+                </button>
+
+
+                <!-- PRINT TICKET -->
+                <button
+                    class="action-card print-ticket"
+                    id="printTicketBtn"
+                    type="button"
+                >
+
+                    <div class="action-icon">
+                        🧾
+                    </div>
+
+                    <div class="action-text">
+                        <h3>طباعة بطاقة الحجز</h3>
+                        <p>إعادة طباعة بطاقة المريض</p>
+                    </div>
+
+                    <span class="action-arrow">←</span>
+
+                </button>
+
+
+                <!-- SEARCH -->
+                <button
+                    class="action-card search-patient"
+                    id="searchPatientBtn"
+                    type="button"
+                >
+
+                    <div class="action-icon">
+                        🔍
+                    </div>
+
+                    <div class="action-text">
+                        <h3>البحث</h3>
+                        <p>البحث عن مريض أو ملف طبي</p>
+                    </div>
+
+                    <span class="action-arrow">←</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DOCTORS ================= -->
+        <section class="doctors-section">
+
+            <div class="section-title">
+
+                <div>
+                    <h2>حالة الأطباء</h2>
+                    <p>الأطباء المتاحون حاليًا</p>
+                </div>
+
+            </div>
+
+
+            <div id="doctorsList" class="doctors-list">
+
+                <div class="empty-state">
+                    <div>👨‍⚕️</div>
+                    <p>جاري تحميل الأطباء...</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TODAY QUEUE ================= -->
+        <section class="queue-section">
+
+            <div class="section-title">
+
+                <div>
+                    <h2>قائمة الانتظار</h2>
+                    <p>المرضى الموجودون حاليًا في العيادة</p>
+                </div>
+
+                <div class="queue-count">
+                    <span id="queueCount">0</span>
+                    منتظر
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>رقم الانتظار</th>
+                            <th>المريض</th>
+                            <th>الطبيب</th>
+                            <th>نوع الزيارة</th>
+                            <th>الحالة</th>
+                            <th>وقت الوصول</th>
+                            <th>الإجراء</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="queueTableBody">
+
+                        <tr>
+                            <td colspan="7">
+                                <div class="empty-table">
+                                    <div>🪑</div>
+                                    <p>لا يوجد مرضى في قائمة الانتظار</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TODAY APPOINTMENTS ================= -->
+        <section class="appointments-section">
+
+            <div class="section-title">
+
+                <div>
+                    <h2>مواعيد اليوم</h2>
+                    <p>الحجوزات المجدولة لهذا اليوم</p>
+                </div>
+
+                <button
+                    id="viewAllAppointmentsBtn"
+                    class="secondary-button"
+                    type="button"
+                >
+                    عرض جميع المواعيد
+                </button>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>الوقت</th>
+                            <th>المريض</th>
+                            <th>الطبيب</th>
+                            <th>نوع الزيارة</th>
+                            <th>المصدر</th>
+                            <th>الحالة</th>
+                            <th>الإجراء</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="appointmentsTableBody">
+
+                        <tr>
+                            <td colspan="7">
+
+                                <div class="empty-table">
+                                    <div>📅</div>
+                                    <p>لا توجد مواعيد اليوم</p>
+                                </div>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+<!-- =====================================================
+     WALK-IN PATIENT MODAL
+===================================================== -->
+
+<div id="walkInModal" class="modal-overlay">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <div>
+                <h2>🟢 تسجيل مريض بدون موعد</h2>
+                <p>إضافة المريض مباشرة إلى قائمة الانتظار</p>
+            </div>
+
+            <button
+                id="closeWalkInModal"
+                class="modal-close"
+                type="button"
+            >
+                ×
+            </button>
+        </div>
+
+        <div class="modal-body">
+
+            <!-- Patient -->
+
+            <div class="form-group">
+
+                <label for="walkInPatient">
+                    المريض
+                </label>
+
+                <select
+                    id="walkInPatient"
+                    required
+                >
+
+                    <option value="">
+                        اختر المريض
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Dentist -->
+
+            <div class="form-group">
+
+                <label for="walkInDentist">
+                    الطبيب
+                </label>
+
+                <select
+                    id="walkInDentist"
+                    required
+                >
+
+                    <option value="">
+                        اختر الطبيب
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Reason -->
+
+            <div class="form-group">
+
+                <label for="walkInReason">
+                    سبب الزيارة
+                </label>
+
+                <input
+                    type="text"
+                    id="walkInReason"
+                    placeholder="مثال: ألم في الأسنان"
+                >
+
+            </div>
+
+
+            <!-- Priority -->
+
+            <div class="form-group">
+
+                <label for="walkInPriority">
+                    نوع الزيارة
+                </label>
+
+                <select id="walkInPriority">
+
+                    <option value="normal">
+                        عادية
+                    </option>
+
+                    <option value="follow_up">
+                        متابعة
+                    </option>
+
+                    <option value="emergency">
+                        🚨 طارئة
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                id="cancelWalkInBtn"
+                class="secondary-button"
+                type="button"
+            >
+                إلغاء
+            </button>
+
+            <button
+                id="saveWalkInBtn"
+                class="primary-button"
+                type="button"
+            >
+                🟢 تسجيل الوصول
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SEARCH PATIENT MODAL -->
+<div id="searchPatientModal" class="modal-overlay">
+
+    <div class="modal-box search-modal-box">
+
+        <div class="modal-header">
+            <div>
+                <h2>🔍 البحث عن مريض</h2>
+                <p>ابحث بالاسم أو الهاتف أو رقم المريض</p>
+            </div>
+
+            <button
+                id="closeSearchPatientModal"
+                class="modal-close"
+                type="button"
+            >
+                ×
+            </button>
+        </div>
+
+        <div class="modal-body">
+
+            <div class="search-input-wrapper">
+                <input
+                    type="text"
+                    id="patientSearchInput"
+                    placeholder="اكتب اسم المريض أو رقم الهاتف أو رقم الملف..."
+                    autocomplete="off"
+                >
+
+                <button
+                    id="searchPatientActionBtn"
+                    class="primary-button"
+                    type="button"
+                >
+                    🔍 بحث
+                </button>
+            </div>
+
+            <div id="patientSearchResults" class="patient-search-results">
+
+                <div class="search-empty">
+                    <div>🔍</div>
+                    <p>اكتب بيانات المريض للبحث</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+    <!-- ================= TOAST ================= -->
+    <div id="toast" class="toast">
+
+        <div class="toast-icon">✓</div>
+
+        <div>
+            <strong id="toastTitle">نجح</strong>
+            <p id="toastMessage">تمت العملية بنجاح</p>
+        </div>
+
+    </div>
+
+
+    <script src="../assets/js/reception-workspace.js"></script>
+
+</body>
+</html>

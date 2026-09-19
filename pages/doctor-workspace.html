@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Doctor Work | SmileCare</title>
+
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Doctor Workspace CSS -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/doctor-workspace.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="app-shell">
+
+
+    <!-- =========================
+         TOP HEADER
+    ========================== -->
+
+    <header class="top-header">
+
+
+        <div class="brand-area">
+
+            <div class="brand-icon" aria-label="SmileCare">
+    <svg
+        viewBox="0 0 64 64"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+    >
+        <path
+            d="M19.5 8.5
+               C13.5 8.5 9 13.5 9 20
+               C9 29 13.5 32.5 14.5 40
+               C15.3 46.5 17.5 55.5 22 55.5
+               C26 55.5 26.5 47 29 43
+               C30.2 41 33.8 41 35 43
+               C37.5 47 38 55.5 42 55.5
+               C46.5 55.5 48.7 46.5 49.5 40
+               C50.5 32.5 55 29 55 20
+               C55 13.5 50.5 8.5 44.5 8.5
+               C39.5 8.5 36.5 11.5 32 11.5
+               C27.5 11.5 24.5 8.5 19.5 8.5Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M20 25
+               C23 29 27 31 32 31
+               C37 31 41 29 44 25"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+        />
+    </svg>
+</div>
+
+            <div>
+
+                <div class="brand-name">
+                    SMILECARE
+                </div>
+
+                <div class="brand-subtitle">
+                    Dental Clinic System
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-center">
+
+            <div class="header-date-label">
+                TODAY
+            </div>
+
+            <div
+                id="todayDate"
+                class="header-date"
+            >
+                Loading date...
+            </div>
+
+        </div>
+
+
+        <div class="doctor-profile">
+
+            <div class="doctor-avatar">
+                <span>Dr</span>
+            </div>
+
+
+            <div class="doctor-information">
+
+                <div
+                    id="doctorName"
+                    class="doctor-name"
+                >
+                    Dr. Ahmed Benali
+                </div>
+
+
+                <div class="doctor-role">
+                    Doctor
+                </div>
+
+            </div>
+
+
+            <div class="doctor-status-dot"></div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- =========================
+             WORK STATUS
+        ========================== -->
+
+        <section class="work-status-card">
+
+
+            <div class="status-left">
+
+                <div
+                    id="statusIcon"
+                    class="large-status-icon"
+                >
+                    ○
+                </div>
+
+
+                <div class="status-text">
+
+                    <div class="section-label">
+                        WORK STATUS
+                    </div>
+
+
+                    <h1 id="workStatus">
+                        Not started
+                    </h1>
+
+
+                    <p id="startTime">
+                        Your work day has not started yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="status-action">
+
+    <button
+        id="startWorkBtn"
+        class="primary-button start-button"
+        type="button"
+    >
+        <span class="button-icon">
+            ▶
+        </span>
+
+        Start Work Day
+    </button>
+
+    <button
+        id="endWorkBtn"
+        class="primary-button"
+        type="button"
+        style="display:none;"
+    >
+        <span class="button-icon">
+            ■
+        </span>
+
+        End Work Day
+    </button>
+
+</div>
+
+        </section>
+
+
+
+        <!-- =========================
+             DAILY SUMMARY
+        ========================== -->
+
+        <section class="summary-grid">
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon patients-icon">
+                    👥
+                </div>
+
+
+                <div class="summary-content">
+
+                    <span>
+                        Today's Patients
+                    </span>
+
+                    <strong id="totalPatients">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon waiting-icon">
+                    ◷
+                </div>
+
+
+                <div class="summary-content">
+
+                    <span>
+                        Waiting
+                    </span>
+
+                    <strong id="waitingPatients">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon arrived-icon">
+                    ✓
+                </div>
+
+
+                <div class="summary-content">
+
+                    <span>
+                        Arrived
+                    </span>
+
+                    <strong id="arrivedPatients">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon completed-icon">
+                    ✓
+                </div>
+
+
+                <div class="summary-content">
+
+                    <span>
+                        Completed
+                    </span>
+
+                    <strong id="completedPatients">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             MAIN WORK AREA
+        ========================== -->
+
+        <section class="work-area">
+
+
+            <!-- CURRENT PATIENT -->
+
+            <div class="current-patient-card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <div class="section-label">
+                            CURRENT PATIENT
+                        </div>
+
+                        <h2>
+                            Consultation
+                        </h2>
+
+                    </div>
+
+
+                    <div class="live-indicator">
+
+                        <span></span>
+
+                        LIVE
+
+                    </div>
+
+                </div>
+
+
+
+                <div id="currentPatient" class="current-patient-empty">
+
+    <div class="empty-patient-icon">
+        👤
+    </div>
+
+    <h3>No patient in consultation</h3>
+
+    <p>
+        The next patient will appear here automatically.
+    </p>
+
+    <button
+    id="callNextBtn"
+    class="call-next-button"
+    type="button"
+>
+    <span>📢</span>
+    Call Next Patient
+</button>
+</div>
+
+            </div>
+
+
+
+            <!-- QUICK GUIDE -->
+
+            <aside class="quick-panel">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <div class="section-label">
+                            WORKFLOW
+                        </div>
+
+                        <h2>
+                            Quick Guide
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="workflow-list">
+
+
+                    <div class="workflow-step active">
+
+                        <div class="workflow-number">
+                            1
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Start Work Day
+                            </strong>
+
+                            <p>
+                                Register your attendance.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="workflow-line"></div>
+
+
+
+                    <div class="workflow-step">
+
+                        <div class="workflow-number">
+                            2
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Call Next
+                            </strong>
+
+                            <p>
+                                The system selects the next patient.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="workflow-line"></div>
+
+
+
+                    <div class="workflow-step">
+
+                        <div class="workflow-number">
+                            3
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Open Visit
+                            </strong>
+
+                            <p>
+                                Patient information is ready.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="workflow-line"></div>
+
+
+
+                    <div class="workflow-step">
+
+                        <div class="workflow-number">
+                            4
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Finish Visit
+                            </strong>
+
+                            <p>
+                                Save the visit and call the next patient.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+
+        <!-- =========================
+             TODAY'S PATIENTS
+        ========================== -->
+
+        <section class="patients-card">
+
+
+            <div class="card-header patients-header">
+
+
+                <div>
+
+                    <div class="section-label">
+                        TODAY
+                    </div>
+
+                    <h2>
+                        Today's Patients
+                    </h2>
+
+                </div>
+
+
+                <div class="patients-counter">
+
+                    <strong id="patientCount">
+                        0
+                    </strong>
+
+                    <span>
+                        patients
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="table-container">
+
+
+                <table class="patients-table">
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                #
+                            </th>
+
+                            <th>
+                                PATIENT
+                            </th>
+
+                            <th>
+                                TIME
+                            </th>
+
+                            <th>
+                                REASON
+                            </th>
+
+                            <th>
+                                STATUS
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+
+                    <tbody id="patientsList">
+
+
+                        <tr>
+
+                            <td colspan="5">
+
+
+                                <div class="table-empty">
+
+
+                                    <div>
+                                        👥
+                                    </div>
+
+
+                                    <span>
+                                        Start your work day to see today's patients.
+                                    </span>
+
+
+                                </div>
+
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+
+    <div
+        id="toast"
+        class="toast"
+    >
+
+
+        <div
+            id="toastIcon"
+            class="toast-icon"
+        >
+            ✓
+        </div>
+
+
+        <div>
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+
+            <p id="toastMessage">
+                Operation completed.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- Doctor Workspace JavaScript -->
+
+<script
+    src="../assets/js/doctor-workspace.js"
+></script>
+
+
+</body>
+
+</html>
+

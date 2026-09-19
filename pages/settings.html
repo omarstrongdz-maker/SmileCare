@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/settings.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🦷 <span>SmileCare</span>
+        </div>
+
+        <nav class="menu">
+
+            <a href="../dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="patients.html">
+                Patients
+            </a>
+
+            <a href="doctors.html">
+                Doctors
+            </a>
+
+            <a href="appointments.html">
+                Appointments
+            </a>
+
+            <a href="dental-chart.html">
+                Dental Chart
+            </a>
+
+            <a href="medical-records.html">
+                Medical Records
+            </a>
+
+            <a href="payments.html">
+                Payments
+            </a>
+
+            <a href="reports.html">
+                Reports
+            </a>
+
+            <a href="settings.html" class="active">
+                Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="content">
+
+        <header class="topbar">
+
+            <h1>Settings</h1>
+
+            <div class="user">
+                Omar
+            </div>
+
+        </header>
+
+
+        <!-- Settings -->
+
+        <section class="settings-container">
+
+
+            <!-- Clinic Settings -->
+
+            <div class="settings-card">
+
+                <h2>Clinic Information</h2>
+
+                <p class="settings-description">
+                    Manage your clinic information.
+                </p>
+
+
+                <label>
+                    Clinic Name
+                </label>
+
+                <input
+                    type="text"
+                    id="clinicName"
+                    value="SmileCare"
+                >
+
+
+                <label>
+                    Clinic Phone
+                </label>
+
+                <input
+                    type="text"
+                    id="clinicPhone"
+                    placeholder="Example: 0551234567"
+                >
+
+
+                <label>
+                    Clinic Address
+                </label>
+
+                <input
+                    type="text"
+                    id="clinicAddress"
+                    placeholder="Clinic address"
+                >
+
+            </div>
+
+
+            <!-- User Settings -->
+
+            <div class="settings-card">
+
+                <h2>User Information</h2>
+
+                <p class="settings-description">
+                    Manage your account information.
+                </p>
+
+
+                <label>
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    value="Omar"
+                >
+
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="example@email.com"
+                >
+
+            </div>
+
+
+            <!-- Appointment Settings -->
+
+            <div class="settings-card">
+
+                <h2>Appointment Settings</h2>
+
+                <p class="settings-description">
+                    Basic appointment settings.
+                </p>
+
+
+                <label>
+                    Working Days
+                </label>
+
+                <select id="workingDays">
+
+                    <option value="Saturday-Thursday">
+                        Saturday - Thursday
+                    </option>
+
+                    <option value="Sunday-Thursday">
+                        Sunday - Thursday
+                    </option>
+
+                    <option value="Monday-Friday">
+                        Monday - Friday
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Working Hours
+                </label>
+
+                <input
+                    type="text"
+                    id="workingHours"
+                    value="08:00 - 17:00"
+                >
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="settings-buttons">
+
+                <button
+                    class="save-settings-btn"
+                    id="saveSettings"
+                >
+                    Save Settings
+                </button>
+
+                <button
+                    class="reset-settings-btn"
+                    id="resetSettings"
+                >
+                    Reset
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="../assets/js/settings.js"></script>
+
+</body>
+
+</html>

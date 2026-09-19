@@ -1,0 +1,1796 @@
+/* =========================================================
+   SMILECARE
+   RECEPTION WORKSPACE - PROFESSIONAL UI
+   ========================================================= */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #eff6ff;
+
+    --cyan: #0891b2;
+    --cyan-light: #ecfeff;
+
+    --green: #16a34a;
+    --green-light: #f0fdf4;
+
+    --yellow: #d97706;
+    --yellow-light: #fffbeb;
+
+    --red: #dc2626;
+    --red-light: #fef2f2;
+
+    --purple: #7c3aed;
+    --purple-light: #f5f3ff;
+
+    --text: #172033;
+    --text-secondary: #64748b;
+    --text-light: #94a3b8;
+
+    --background: #f5f7fb;
+    --white: #ffffff;
+
+    --border: #e5eaf1;
+    --border-light: #eef2f7;
+
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+    --shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+    --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.09);
+
+    --radius-sm: 10px;
+    --radius: 16px;
+    --radius-lg: 20px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    direction: rtl;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc 0%,
+            #f5f7fb 45%,
+            #f3f6fa 100%
+        );
+
+    color: var(--text);
+
+    line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.2);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.top-header {
+    width: 100%;
+
+    min-height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 48px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow:
+        0 4px 20px rgba(15, 23, 42, 0.04);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #38bdf8
+        );
+
+    color: white;
+
+    font-size: 26px;
+
+    box-shadow:
+        0 8px 18px rgba(37, 99, 235, 0.22);
+}
+
+.brand h1 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+
+    color: #172033;
+}
+
+.brand span {
+    display: block;
+
+    margin-top: 1px;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   EMPLOYEE INFORMATION
+   ========================================================= */
+
+.employee-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.date-box,
+.employee-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-height: 52px;
+
+    padding: 8px 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+}
+
+.date-box > span {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary-light);
+
+    border-radius: 9px;
+
+    font-size: 17px;
+}
+
+.employee-avatar {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+
+    font-size: 17px;
+}
+
+.date-box small,
+.employee-box small {
+    display: block;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.date-box strong,
+.employee-box strong {
+    display: block;
+
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.main-container {
+    width: min(1450px, calc(100% - 64px));
+
+    margin: 0 auto;
+
+    padding: 36px 0 60px;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+   ========================================================= */
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+}
+
+.page-heading h2 {
+    font-size: 28px;
+    font-weight: 800;
+
+    color: var(--text);
+
+    letter-spacing: -0.7px;
+}
+
+.page-heading p {
+    margin-top: 4px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+.work-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-width: 190px;
+
+    padding: 11px 16px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.work-status small {
+    display: block;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.work-status strong {
+    display: block;
+
+    margin-top: 1px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.status-dot {
+    width: 11px;
+    height: 11px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--yellow);
+
+    box-shadow:
+        0 0 0 5px var(--yellow-light);
+}
+
+
+/* =========================================================
+   WORK DAY CARD
+   ========================================================= */
+
+.work-day-card {
+    min-height: 128px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 25px 28px;
+
+    margin-bottom: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f8fbff 100%
+        );
+
+    border: 1px solid #dce8f7;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.work-day-card::before {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 4px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--primary),
+            #38bdf8
+        );
+}
+
+.work-day-content {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+}
+
+.work-day-icon {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: var(--primary-light);
+
+    font-size: 27px;
+}
+
+.work-day-content h3 {
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.work-day-content p {
+    margin-top: 4px;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+}
+
+.work-day-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#startTimeText {
+    color: var(--text-secondary);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    padding-left: 5px;
+}
+
+.primary-button,
+.danger-button {
+    min-width: 132px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 18px;
+
+    border-radius: 11px;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.primary-button {
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #3b82f6
+        );
+
+    box-shadow:
+        0 7px 16px rgba(37, 99, 235, 0.2);
+}
+
+.primary-button:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(37, 99, 235, 0.26);
+}
+
+.danger-button {
+    background: var(--red);
+
+    box-shadow:
+        0 7px 16px rgba(220, 38, 38, 0.15);
+}
+
+.danger-button:hover {
+    background: #b91c1c;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.statistics-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    min-height: 108px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow);
+}
+
+.stat-icon {
+    width: 51px;
+    height: 51px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 23px;
+}
+
+.stat-card.patients .stat-icon {
+    background: var(--primary-light);
+}
+
+.stat-card.waiting .stat-icon {
+    background: var(--yellow-light);
+}
+
+.stat-card.doctors .stat-icon {
+    background: var(--green-light);
+}
+
+.stat-card.room .stat-icon {
+    background: var(--purple-light);
+}
+
+.stat-card span {
+    display: block;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stat-card strong {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--text);
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.stat-card.room strong {
+    font-size: 16px;
+
+    color: var(--green);
+}
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.section-title h2 {
+    font-size: 19px;
+    font-weight: 800;
+
+    color: var(--text);
+}
+
+.section-title p {
+    margin-top: 3px;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.quick-actions-section {
+    margin-bottom: 28px;
+}
+
+.quick-actions-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.action-card {
+    min-height: 118px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 18px;
+
+    text-align: right;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #cbd8ea;
+
+    box-shadow: var(--shadow);
+}
+
+.action-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 20px;
+}
+
+.next-patient .action-icon {
+    background: var(--primary-light);
+}
+
+.new-patient .action-icon {
+    background: var(--green-light);
+}
+
+.appointments .action-icon {
+    background: var(--cyan-light);
+}
+
+.print-ticket .action-icon {
+    background: var(--yellow-light);
+}
+
+.search-patient .action-icon {
+    background: var(--purple-light);
+}
+
+.action-text {
+    min-width: 0;
+}
+
+.action-text h3 {
+    font-size: 13px;
+    font-weight: 800;
+
+    color: var(--text);
+
+    white-space: nowrap;
+}
+
+.action-text p {
+    margin-top: 3px;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.action-arrow {
+    position: absolute;
+
+    left: 13px;
+    bottom: 12px;
+
+    color: #cbd5e1;
+
+    font-size: 16px;
+
+    transition: 0.2s ease;
+}
+
+.action-card:hover .action-arrow {
+    color: var(--primary);
+
+    transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+.doctors-section,
+.queue-section,
+.appointments-section {
+    padding: 24px;
+
+    margin-bottom: 24px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   DOCTORS
+   ========================================================= */
+
+.doctors-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.doctor-card,
+.doctor-item {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--border-light);
+
+    border-radius: 13px;
+
+    transition: 0.2s ease;
+}
+
+.doctor-card:hover,
+.doctor-item:hover {
+    background: #ffffff;
+
+    border-color: #d5e1ef;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.doctor-card::before,
+.doctor-item::before {
+    content: "👨‍⚕️";
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: var(--primary-light);
+
+    font-size: 19px;
+}
+
+.doctor-name {
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.doctor-specialty {
+    margin-top: 2px;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+}
+
+.doctor-status {
+    display: inline-flex;
+
+    margin-top: 5px;
+
+    padding: 3px 8px;
+
+    background: var(--green-light);
+
+    color: var(--green);
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   QUEUE COUNT
+   ========================================================= */
+
+.queue-count {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#queueCount {
+    min-width: 31px;
+    height: 31px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+   ========================================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid var(--border-light);
+
+    border-radius: 13px;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    background: var(--white);
+
+    min-width: 820px;
+}
+
+thead {
+    background: #f8fafc;
+}
+
+th {
+    padding: 13px 15px;
+
+    color: var(--text-secondary);
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+td {
+    padding: 14px 15px;
+
+    color: #334155;
+
+    border-bottom: 1px solid var(--border-light);
+
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr {
+    transition: background 0.15s ease;
+}
+
+tbody tr:hover {
+    background: #f8fbff;
+}
+
+
+/* =========================================================
+   QUEUE NUMBER
+   ========================================================= */
+
+#queueTableBody td:first-child {
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   TABLE ACTION BUTTONS
+   ========================================================= */
+
+.table-container button {
+    padding: 7px 11px;
+
+    border-radius: 8px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.table-container button:hover {
+    background: var(--primary);
+
+    color: white;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.status,
+.badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 70px;
+
+    padding: 4px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.status-waiting {
+    background: var(--yellow-light);
+    color: var(--yellow);
+}
+
+.status-called {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.status-in-visit {
+    background: var(--purple-light);
+    color: var(--purple);
+}
+
+.status-completed {
+    background: var(--green-light);
+    color: var(--green);
+}
+
+.status-absent {
+    background: var(--red-light);
+    color: var(--red);
+}
+
+.status-cancelled {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+
+/* =========================================================
+   APPOINTMENTS BUTTON
+   ========================================================= */
+
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 15px;
+
+    border: 1px solid #dbe4ef;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.secondary-button:hover {
+    background: var(--primary-light);
+
+    border-color: #bfdbfe;
+}
+
+
+/* =========================================================
+   EMPTY STATES
+   ========================================================= */
+
+.empty-state {
+    min-height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    color: var(--text-secondary);
+
+    text-align: center;
+}
+
+.empty-state div {
+    margin-bottom: 6px;
+
+    font-size: 28px;
+}
+
+.empty-state p {
+    font-size: 12px;
+}
+
+.empty-table {
+    min-height: 150px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-secondary);
+
+    text-align: center;
+}
+
+.empty-table div {
+    margin-bottom: 7px;
+
+    font-size: 30px;
+
+    opacity: 0.7;
+}
+
+.empty-table p {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+.toast {
+    position: fixed;
+
+    left: 28px;
+    bottom: 28px;
+
+    z-index: 9999;
+
+    min-width: 290px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 17px;
+
+    background: #172033;
+
+    color: white;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 15px 40px rgba(15, 23, 42, 0.2);
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.toast.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.toast-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: var(--green);
+
+    color: white;
+
+    font-weight: 800;
+}
+
+#toastTitle {
+    display: block;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+#toastMessage {
+    margin-top: 1px;
+
+    color: #cbd5e1;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+/* =========================================================
+   RESPONSIVE - LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .top-header {
+        padding: 16px 28px;
+    }
+
+    .main-container {
+        width: min(1100px, calc(100% - 40px));
+    }
+
+    .quick-actions-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .doctors-list {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .top-header {
+        position: relative;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+
+        padding: 18px 20px;
+    }
+
+    .employee-info {
+        justify-content: space-between;
+    }
+
+    .date-box,
+    .employee-box {
+        flex: 1;
+    }
+
+    .main-container {
+        width: calc(100% - 28px);
+
+        padding-top: 25px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .work-status {
+        width: 100%;
+    }
+
+    .work-day-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .work-day-actions {
+        width: 100%;
+
+        flex-wrap: wrap;
+    }
+
+    .statistics-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .quick-actions-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .brand h1 {
+        font-size: 21px;
+    }
+
+    .brand-icon {
+        width: 46px;
+        height: 46px;
+
+        font-size: 22px;
+    }
+
+    .employee-info {
+        flex-direction: column;
+    }
+
+    .date-box,
+    .employee-box {
+        width: 100%;
+    }
+
+    .page-heading h2 {
+        font-size: 24px;
+    }
+
+    .statistics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .doctors-list {
+        grid-template-columns: 1fr;
+    }
+
+    .work-day-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primary-button,
+    .danger-button {
+        width: 100%;
+    }
+
+    .doctors-section,
+    .queue-section,
+    .appointments-section {
+        padding: 17px;
+    }
+
+    .section-title {
+        align-items: flex-start;
+
+        gap: 12px;
+
+        flex-direction: column;
+    }
+
+    .toast {
+        left: 15px;
+        right: 15px;
+
+        min-width: auto;
+    }
+}
+
+
+/* =====================================================
+   WALK-IN PATIENT MODAL
+===================================================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 9999;
+
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 520px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.25);
+
+    overflow: hidden;
+
+    animation: modalAppear 0.2s ease;
+}
+
+@keyframes modalAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 24px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+    margin: 0 0 5px;
+
+    font-size: 20px;
+
+    color: #1f2937;
+}
+
+.modal-header p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+.modal-close {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #f3f4f6;
+
+    color: #6b7280;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.modal-close:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: 600;
+
+    color: #374151;
+
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #1f2937;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.modal-footer {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 18px 24px;
+
+    border-top: 1px solid #e5e7eb;
+
+    background: #f9fafb;
+}
+
+
+/* =====================================================
+   EMERGENCY ACTION
+===================================================== */
+
+.emergency-action {
+    border: 1px solid #fecaca;
+    background: linear-gradient(
+        135deg,
+        #fff7f7,
+        #ffffff
+    );
+}
+
+.emergency-action:hover {
+    border-color: #ef4444;
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.15);
+}
+
+.emergency-action .action-icon {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.emergency-action h3 {
+    color: #b91c1c;
+}
+
+
+/* =====================================================
+   PATIENT SEARCH
+===================================================== */
+
+.search-modal-box {
+    max-width: 700px;
+}
+
+.search-input-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.search-input-wrapper input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-input-wrapper input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.patient-search-results {
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.patient-result-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 15px;
+    margin-bottom: 10px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    background: #fff;
+    transition: 0.2s;
+}
+
+.patient-result-card:hover {
+    border-color: #2563eb;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.08);
+}
+
+.patient-result-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.patient-result-avatar {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #eff6ff;
+    font-size: 20px;
+}
+
+.patient-result-info h3 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    color: #1f2937;
+}
+
+.patient-result-info p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.patient-result-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.patient-view-btn {
+    border: none;
+    padding: 9px 13px;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #2563eb;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.patient-view-btn:hover {
+    background: #dbeafe;
+}
+
+.search-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6b7280;
+}
+
+.search-empty div {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.search-empty p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+
+    .search-input-wrapper {
+        flex-direction: column;
+    }
+
+    .patient-result-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}

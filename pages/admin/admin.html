@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmileCare | Administration</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- IMPORTANT: admin.html is inside pages/admin -->
+    <link rel="stylesheet" href="../../assets/css/admin/admin.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🦷
+            </div>
+
+            <div class="brand-text">
+                <strong>SMILECARE</strong>
+                <span>Clinic Administration</span>
+            </div>
+
+        </div>
+
+
+        <div class="nav-caption">
+            MANAGEMENT
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="#" class="nav-item active" data-target="overview">
+                <span class="nav-icon">◈</span>
+                <span>Overview</span>
+            </a>
+
+            <a href="#" class="nav-item" data-target="doctors">
+                <span class="nav-icon">♙</span>
+                <span>Doctors</span>
+            </a>
+
+            <a href="#" class="nav-item" data-target="doctorLeaves">
+    <span class="nav-icon">🗓</span>
+    <span>Doctor Leaves</span>
+</a>
+
+            <a href="#" class="nav-item" data-target="staff">
+                <span class="nav-icon">♙</span>
+                <span>Staff</span>
+            </a>
+
+            <a href="#" class="nav-item" data-target="patients">
+                <span class="nav-icon">♙</span>
+                <span>Patients</span>
+            </a>
+
+            <a href="#" class="nav-item" data-target="appointments">
+                <span class="nav-icon">▣</span>
+                <span>Appointments</span>
+            </a>
+
+            <a href="#" class="nav-item" data-target="operations">
+                <span class="nav-icon">⌁</span>
+                <span>Operations</span>
+            </a>
+
+            <a href="#" class="nav-item" data-target="rooms">
+                <span class="nav-icon">□</span>
+                <span>Rooms</span>
+            </a>
+
+            <a href="#" class="nav-item" data-target="finance">
+                <span class="nav-icon">◇</span>
+                <span>Finance</span>
+            </a>
+
+            <a href="#" class="nav-item" data-target="reports">
+                <span class="nav-icon">▤</span>
+                <span>Reports</span>
+            </a>
+
+            <a href="#" class="nav-item" data-target="settings">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>System Online</strong>
+                    <span>SmileCare Core</span>
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="logoutBtn"
+                class="logout-btn"
+            >
+                <span>↪</span>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOP HEADER -->
+
+        <header class="top-header">
+
+            <div class="welcome-block">
+
+                <div class="page-label">
+                    ADMINISTRATION CONTROL CENTER
+                </div>
+
+                <h1>
+                    Clinic Overview
+                </h1>
+
+                <p>
+                    Everything important in your clinic, at a glance.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <div class="live-indicator">
+
+                    <span class="live-dot"></span>
+
+                    <span>LIVE</span>
+
+                </div>
+
+
+                <div class="date-box">
+
+                    <span class="date-icon">◷</span>
+
+                    <span id="todayDate">
+                        Loading date...
+                    </span>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        A
+                    </div>
+
+                    <div class="admin-details">
+
+                        <strong id="adminName">
+                            Administrator
+                        </strong>
+
+                        <span>
+                            Clinic Manager
+                        </span>
+
+                    </div>
+
+                    <span class="profile-arrow">
+                        ˅
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CRITICAL ALERT
+        ================================================== -->
+
+        <section
+            id="criticalAlert"
+            class="critical-alert hidden"
+        >
+
+            <div class="alert-icon">
+                !
+            </div>
+
+            <div class="alert-content">
+
+                <strong id="alertTitle">
+                    Attention required
+                </strong>
+
+                <p id="alertMessage">
+                    There are issues requiring administrative attention.
+                </p>
+
+            </div>
+
+            <div class="alert-badge">
+                ACTION
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             KPI CARDS
+        ================================================== -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon blue">
+                        ♙
+                    </div>
+
+                    <span class="stat-status positive">
+                        ● Live
+                    </span>
+
+                </div>
+
+                <div class="stat-label">
+                    Doctors Present
+                </div>
+
+                <strong
+                    id="doctorsPresent"
+                    class="stat-value"
+                >
+                    0
+                </strong>
+
+                <div class="stat-footer">
+                    Current medical team
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon purple">
+                        ♙
+                    </div>
+
+                    <span class="stat-status positive">
+                        ● Active
+                    </span>
+
+                </div>
+
+                <div class="stat-label">
+                    Reception Staff
+                </div>
+
+                <strong
+                    id="receptionPresent"
+                    class="stat-value"
+                >
+                    0
+                </strong>
+
+                <div class="stat-footer">
+                    Front desk activity
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon cyan">
+                        ♙
+                    </div>
+
+                </div>
+
+                <div class="stat-label">
+                    Patients Today
+                </div>
+
+                <strong
+                    id="patientsToday"
+                    class="stat-value"
+                >
+                    0
+                </strong>
+
+                <div class="stat-footer">
+                    Today's patient volume
+                </div>
+
+            </div>
+
+
+            <div class="stat-card waiting-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon amber">
+                        ◉
+                    </div>
+
+                    <span class="stat-status warning">
+                        Queue
+                    </span>
+
+                </div>
+
+                <div class="stat-label">
+                    Patients Waiting
+                </div>
+
+                <strong
+                    id="waitingPatients"
+                    class="stat-value"
+                >
+                    0
+                </strong>
+
+                <div class="stat-footer">
+                    Currently waiting
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon green">
+                        ▣
+                    </div>
+
+                </div>
+
+                <div class="stat-label">
+                    Upcoming
+                </div>
+
+                <strong
+                    id="upcomingAppointments"
+                    class="stat-value"
+                >
+                    0
+                </strong>
+
+                <div class="stat-footer">
+                    Scheduled appointments
+                </div>
+
+            </div>
+
+
+            <div class="stat-card revenue-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon gold">
+                        ◇
+                    </div>
+
+                    <span class="stat-status revenue">
+                        TODAY
+                    </span>
+
+                </div>
+
+                <div class="stat-label">
+                    Today's Revenue
+                </div>
+
+                <strong
+                    id="todayRevenue"
+                    class="stat-value revenue-value"
+                >
+                    0 DA
+                </strong>
+
+                <div class="stat-footer">
+                    Paid transactions
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STAFF + QUEUE
+        ================================================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- STAFF -->
+
+            <div class="panel staff-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="panel-kicker">
+                            PEOPLE
+                        </div>
+
+                        <h2>
+                            Clinic Staff
+                        </h2>
+
+                        <p>
+                            Current attendance and work status
+                        </p>
+
+                    </div>
+
+                    <span class="panel-action">
+                        TODAY
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="staffList"
+                    class="staff-list"
+                >
+
+                    <div class="loading">
+                        Loading staff...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUEUE -->
+
+            <div class="panel queue-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="panel-kicker">
+                            LIVE OPERATIONS
+                        </div>
+
+                        <h2>
+                            Waiting Queue
+                        </h2>
+
+                        <p>
+                            Real-time patient flow
+                        </p>
+
+                    </div>
+
+                    <span
+                        id="queueBadge"
+                        class="queue-badge"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="queueList"
+                    class="queue-list"
+                >
+
+                    <div class="loading">
+                        Loading queue...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             APPOINTMENTS
+        ================================================== -->
+
+        <section class="panel appointments-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="panel-kicker">
+                        SCHEDULE
+                    </div>
+
+                    <h2>
+                        Upcoming Appointments
+                    </h2>
+
+                    <p>
+                        The next patients scheduled for the clinic
+                    </p>
+
+                </div>
+
+                <div class="schedule-indicator">
+                    <span></span>
+                    Schedule active
+                </div>
+
+            </div>
+
+
+            <div
+                id="appointmentsList"
+                class="appointments-list"
+            >
+
+                <div class="loading">
+                    Loading appointments...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FINANCE + REPORTS
+        ================================================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- FINANCE -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="panel-kicker">
+                            FINANCIAL CONTROL
+                        </div>
+
+                        <h2>
+                            Financial Overview
+                        </h2>
+
+                        <p>
+                            Today's financial position
+                        </p>
+
+                    </div>
+
+                    <div class="finance-icon">
+                        ◇
+                    </div>
+
+                </div>
+
+
+                <div class="finance-summary">
+
+
+                    <div class="finance-row">
+
+                        <div class="finance-label">
+
+                            <span class="finance-dot blue"></span>
+
+                            <span>
+                                Recorded Revenue
+                            </span>
+
+                        </div>
+
+                        <strong id="recordedRevenue">
+                            0 DA
+                        </strong>
+
+                    </div>
+
+
+                    <div class="finance-row">
+
+                        <div class="finance-label">
+
+                            <span class="finance-dot green"></span>
+
+                            <span>
+                                Received Amount
+                            </span>
+
+                        </div>
+
+                        <strong id="receivedAmount">
+                            0 DA
+                        </strong>
+
+                    </div>
+
+
+                    <div class="finance-divider"></div>
+
+
+                    <div class="finance-row difference-row">
+
+                        <div class="finance-label">
+
+                            <span class="finance-dot amber"></span>
+
+                            <span>
+                                Difference
+                            </span>
+
+                        </div>
+
+                        <strong
+                            id="financeDifference"
+                            class="success-text"
+                        >
+                            0 DA
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REPORTS -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="panel-kicker">
+                            DAILY CONTROL
+                        </div>
+
+                        <h2>
+                            Reports & Handovers
+                        </h2>
+
+                        <p>
+                            Administrative completion status
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-list">
+
+
+                    <div class="report-row">
+
+                        <div class="report-name">
+
+                            <div class="report-icon blue">
+                                ♙
+                            </div>
+
+                            <span>
+                                Doctor Reports
+                            </span>
+
+                        </div>
+
+                        <strong id="doctorReports">
+                            Pending
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-row">
+
+                        <div class="report-name">
+
+                            <div class="report-icon purple">
+                                ♙
+                            </div>
+
+                            <span>
+                                Reception Report
+                            </span>
+
+                        </div>
+
+                        <strong id="receptionReport">
+                            Pending
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-row">
+
+                        <div class="report-name">
+
+                            <div class="report-icon green">
+                                ◇
+                            </div>
+
+                            <span>
+                                Financial Handover
+                            </span>
+
+                        </div>
+
+                        <strong id="financialHandover">
+                            Pending
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CLINIC DAY CONTROL
+        ================================================== -->
+
+        <section class="close-day-panel">
+
+
+            <div class="close-day-left">
+
+                <div class="close-day-icon">
+                    🔒
+                </div>
+
+                <div>
+
+                    <div class="panel-kicker">
+                        END OF DAY
+                    </div>
+
+                    <h2>
+                        Clinic Day Control
+                    </h2>
+
+                    <p id="closeDayMessage">
+                        The clinic day is currently open.
+                        Final closure will become available after
+                        all reports, visits and financial handovers
+                        are completed.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="close-day-right">
+
+                <div class="closure-state">
+
+                    <span class="closure-dot"></span>
+
+                    <span>
+                        Closure locked
+                    </span>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="closeClinicDayBtn"
+                    class="close-day-btn"
+                    disabled
+                >
+                    🔒 Close Clinic Day
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ADMIN MODULE VIEW
+        ================================================== -->
+
+        <section
+            id="moduleView"
+            class="module-view hidden"
+        >
+            <div class="module-header">
+                <div>
+                    <div
+                        id="moduleKicker"
+                        class="panel-kicker"
+                    >
+                        ADMINISTRATION
+                    </div>
+
+                    <h2 id="moduleTitle">
+                        Administration Module
+                    </h2>
+
+                    <p id="moduleDescription">
+                        Manage this area of SmileCare.
+                    </p>
+                </div>
+
+                <div class="module-status">
+                    <span class="module-status-dot"></span>
+                    READY
+                </div>
+            </div>
+
+            <div
+                id="moduleContent"
+                class="module-content"
+            >
+            </div>
+        </section>
+
+
+        <footer class="admin-footer">
+
+            <span>
+                SMILECARE Administration
+            </span>
+
+            <span>
+                Secure Clinic Management System
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================== -->
+
+<div
+    id="toast"
+    class="toast"
+>
+
+    <div
+        id="toastIcon"
+        class="toast-icon"
+    >
+        ✓
+    </div>
+
+    <div class="toast-content">
+
+        <strong id="toastTitle">
+            Success
+        </strong>
+
+        <p id="toastMessage">
+            Operation completed.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- IMPORTANT: correct path -->
+<script src="../../assets/js/admin/admin.js"></script>
+
+
+
+</body>
+</html>

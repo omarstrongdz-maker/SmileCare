@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SmileCare - Online Appointment</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/online-booking.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="booking-page">
+
+    <div class="booking-card">
+
+        <div class="booking-header">
+
+            <div class="logo">
+                🦷
+            </div>
+
+            <h1>SmileCare</h1>
+
+            <p>
+                Online Appointment Booking
+            </p>
+
+        </div>
+
+
+        <form id="bookingForm">
+
+            <div class="form-group">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="patientName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="patientPhone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Email
+                    <span>(Optional)</span>
+                </label>
+
+                <input
+                    type="email"
+                    id="patientEmail"
+                    placeholder="example@email.com"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Doctor
+                </label>
+
+                <select
+                    id="doctorSelect"
+                    required
+                >
+
+                    <option value="">
+                        Select a doctor
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="appointmentDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="appointmentTime"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Reason for Visit
+                </label>
+
+                <textarea
+                    id="appointmentReason"
+                    placeholder="Describe the reason for your visit"
+                    rows="3"
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="book-btn"
+            >
+                🗓 Book Appointment
+            </button>
+
+        </form>
+
+
+        <div
+            id="successBox"
+            class="success-box"
+            style="display:none;"
+        >
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>
+                Appointment Request Sent
+            </h2>
+
+            <p>
+                Your appointment has been successfully registered.
+            </p>
+
+            <div class="booking-number">
+
+                Booking Number:
+
+                <strong id="bookingCode"></strong>
+
+            </div>
+
+            <button
+                id="printBooking"
+                class="print-btn"
+            >
+                🖨 Print Appointment Card
+            </button>
+
+            <button
+                id="newBooking"
+                class="new-booking-btn"
+            >
+                New Booking
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../assets/js/online-booking.js"></script>
+
+</body>
+
+</html>

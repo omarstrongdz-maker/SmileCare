@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dental Chart</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/patients.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🦷 <span>SmileCare</span>
+        </div>
+
+        <nav class="menu">
+
+            <a href="../dashboard.html">Dashboard</a>
+
+            <a href="patients.html">Patients</a>
+
+            <a href="doctors.html">Doctors</a>
+
+            <a href="appointments.html">Appointments</a>
+
+            <a href="dental-chart.html" class="active">
+                Dental Chart
+            </a>
+
+            <a href="medical-records.html">Medical Records</a>
+
+            <a href="payments.html">Payments</a>
+
+            <a href="reports.html">Reports</a>
+
+            <a href="settings.html">Settings</a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="content">
+
+        <header class="topbar">
+
+            <h1>Dental Chart</h1>
+
+            <div class="user">
+                Omar
+            </div>
+
+        </header>
+
+
+        <!-- Patient Selection -->
+
+        <div class="toolbar">
+
+            <select
+                id="dentalPatient"
+                class="search-box"
+            >
+
+                <option value="">
+                    Select Patient
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- Dental Chart -->
+
+        <div class="patients-table">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Tooth Number</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="dentalTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="../assets/js/dental-chart.js"></script>
+
+</body>
+
+</html>
