@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://smilecare-r68s.onrender.com/sitemap.xml
