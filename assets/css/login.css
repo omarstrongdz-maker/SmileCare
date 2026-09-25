@@ -138,3 +138,65 @@ button:hover{
     height: 100%;
     object-fit: cover;
 }
+
+/* ===========================
+   ONLINE BOOKING
+=========================== */
+
+.booking-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0 20px;
+}
+
+.booking-divider::before,
+.booking-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.booking-divider span {
+    color: var(--gray);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.patient-booking {
+    text-align: center;
+}
+
+
+.booking-question {
+    color: var(--gray);
+    margin-bottom: 12px;
+}
+
+
+.booking-button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+
+    background: transparent;
+    color: var(--primary);
+
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+
+.booking-button:hover {
+    background: var(--primary);
+    color: white;
+}

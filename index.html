@@ -2,19 +2,30 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dental Clinic Management System</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>SmileCare - Dental Clinic</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/login.css">
+
+    <link rel="stylesheet" href="assets/css/login.css">
+
 </head>
 
 <body>
+
 <div class="container">
 
     <!-- القسم الأيسر -->
@@ -26,11 +37,17 @@
             Modern Management System for Dental Clinics
         </p>
 
-        <div class="circle"></div>
-        <img src="C:\Users\PC\Desktop\خلفية\lamp_tree_miniature_122836_1280x720.jpg" alt="My Photo">
+        <div class="circle">
 
+            <img
+                src="C:\Users\PC\Desktop\خلفية\lamp_tree_miniature_122836_1280x720.jpg"
+                alt="SmileCare"
+            >
+
+        </div>
 
     </div>
+
 
     <!-- القسم الأيمن -->
     <div class="right-side">
@@ -39,31 +56,62 @@
 
             <h2>Welcome Back</h2>
 
-            <p>Please login to continue</p>
+            <p>
+                Please login to continue
+            </p>
 
+
+            <!-- تسجيل دخول الموظفين -->
             <form id="loginForm">
 
                 <label>Username</label>
-<input
-    type="text"
-    id="username"
-    placeholder="Enter your username"
-    required
->
-                
 
- <label>Password</label>
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your username"
+                    required
+                >
 
-<input
-    type="password"
-    id="password"
-    placeholder="Enter your password"
-    required
->
 
-                <button type="submit">Login</button>
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+
+                <button type="submit">
+                    Login
+                </button>
 
             </form>
+
+
+            <!-- فاصل -->
+            <div class="booking-divider">
+                <span>OR</span>
+            </div>
+
+
+            <!-- حجز موعد للمريض -->
+            <div class="patient-booking">
+
+                <p class="booking-question">
+                    Are you a patient?
+                </p>
+
+                <a
+                    href="pages/online-booking.html"
+                    class="booking-button"
+                >
+                    📅 Book an Appointment
+                </a>
+
+            </div>
 
         </div>
 
@@ -71,7 +119,9 @@
 
 </div>
 
+
 <script src="assets/js/login.js"></script>
+
 </body>
 
 </html>

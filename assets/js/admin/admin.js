@@ -9909,11 +9909,9 @@ async function renderStaffModule() {
         // =================================================
         // LOAD DIRECTLY FROM BACKEND
         // =================================================
-
-        const response = await fetch(
-            "/api/admin/receptionists"
-        );
-
+const response = await fetch(
+    "https://smilecare-r68s.onrender.com/api/admin/receptionists"
+);
 
         if (!response.ok) {
 
