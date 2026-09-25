@@ -3,7 +3,7 @@
 ========================================================= */
 
 const API_BASE =
-    "http://localhost:3000/api";
+    "https://smilecare-r68s.onrender.com/api";
 
 
 /*

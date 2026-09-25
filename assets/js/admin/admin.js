@@ -3,8 +3,7 @@
    Administration Dashboard
    ========================================================= */
 
-const API_BASE = "http://localhost:3000/api";
-
+const API_BASE = "https://smilecare-r68s.onrender.com/api";
 /* =========================================================
    ELEMENTS
    ========================================================= */
@@ -9912,7 +9911,7 @@ async function renderStaffModule() {
         // =================================================
 
         const response = await fetch(
-            "http://localhost:3000/api/admin/receptionists"
+            "/api/admin/receptionists"
         );
 
 

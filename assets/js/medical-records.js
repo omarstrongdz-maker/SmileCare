@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api";
+const API_URL = "https://smilecare-r68s.onrender.com/api";
 
 const table = document.getElementById("recordsTable");
 const modal = document.getElementById("recordModal");

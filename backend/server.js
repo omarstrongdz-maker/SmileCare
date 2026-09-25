@@ -3,13 +3,26 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql2");
-
 const fs = require("fs");
+const path = require("path");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+
+// =====================================================
+// FRONTEND
+// =====================================================
+
+const frontendPath = path.join(__dirname, "..");
+
+app.use(express.static(frontendPath));
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(frontendPath, "index.html"));
+});
 
 
 // =====================================================

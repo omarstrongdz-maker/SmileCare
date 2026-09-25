@@ -7,7 +7,7 @@
    CONFIGURATION
 ========================================================= */
 
-const API_BASE = "http://localhost:3000/api";
+const API_BASE = "https://smilecare-r68s.onrender.com/api";
 
 /*
     Temporary testing doctor.
@@ -1429,6 +1429,7 @@ function escapeHtml(value) {
         .replaceAll("'", "&#039;");
 
 }
+
 
 
 
